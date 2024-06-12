@@ -20,10 +20,28 @@ class _HomePageState extends State<HomePage> {
     //   },
     //   body: {},
     // );
-    const list = ['1월 1일'];
+    const list = ['1월 1일', '10월 26일', '12월 31일'];
+    for (int i = 0; i < list.length; i++) {
+      chidren.add(
+        InkWell(
+          onTap: () => {
+            print(i)
+          },
+          child: Ink(
+            child: SizedBox(
+              width: double.infinity,
+              height: 60.0,
+              child: Text(list.elementAt(i)),
+            ),
+          ),
+        ),
+      );
+    }
 
-    return Column(
-      children: chidren,
+    return SingleChildScrollView(
+      child: Column(
+        children: chidren,
+      ),
     );
   }
 }
